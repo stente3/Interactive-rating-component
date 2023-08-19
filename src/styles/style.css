@@ -1,0 +1,11 @@
+/* Font's */
+@font-face {
+	font-family: 'Overpass';
+	font-weight: 400;
+	src: url('../assets/fonts/Overpass-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Overpass';
+	font-weight: 700;
+	src: url('../assets/fonts/Overpass-Bold.woff2') format('woff2');
+}
