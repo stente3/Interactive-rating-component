@@ -92,6 +92,10 @@ body {
 	background-color: var(--DarkBlue);
 	color: var(--LightGrey);
 }
+.rating__container .button:hover {
+	background-color: var(--LightGrey);
+	color: var(--White);
+}
 
 .rating__submit-button {
 	width: 100%;
@@ -101,6 +105,10 @@ body {
 	border-radius: 5rem;
 	text-transform: uppercase;
 	font-weight: var(--Bold);
+}
+.rating__submit-button:hover {
+	background-color: var(--White);
+	color: var(--Orange);
 }
 
 @media (max-width: 375px) {
@@ -113,4 +121,9 @@ body {
 	body {
 		font-size: 1.8rem;
 	}
+}
+
+.rating__container .active {
+	background-color: var(--Orange);
+	color: white;
 }
