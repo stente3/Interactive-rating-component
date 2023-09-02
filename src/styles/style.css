@@ -127,3 +127,32 @@ body {
 	background-color: var(--Orange);
 	color: white;
 }
+
+.rating__container .active:hover {
+	background-color: var(--Orange);
+	color: white;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-5px);
+	}
+	50% {
+		transform: translateX(5px);
+	}
+	75% {
+		transform: translateX(-5px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.shake-element {
+	animation: shake 0.3s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
