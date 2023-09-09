@@ -31,25 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Escucha el evento de clic en el botón de envío de calificación
 	ratingSubmitButton.addEventListener('click', () => {
 		const ratingItems = ratingContainer.querySelectorAll('.button');
-		const valueCount = calculateRating(ratingItems); // Llama a la función para calcular la cantidad de elementos activos
+		const valueCount = calculateRating(ratingItems);
 
-		// Comprueba la cantidad de elementos activos y muestra un mensaje en la consola
 		if (valueCount === 1) {
 			console.log("You're in");
 		} else {
-			practice();
+			resetAndAnimateRatingElements();
 		}
 	});
 
-	function practice() {
-		let hijo = ratingContainer.querySelectorAll('*');
-		hijo.forEach((e) => {
-			e.classList.add('shake-element');
-			e.classList.remove('active');
+	// Función que da feedback al usuario cuando esté esta votando
+	function resetAndAnimateRatingElements() {
+		let ratingElements = ratingContainer.querySelectorAll('*');
+		ratingElements.forEach((element) => {
+			element.classList.add('shake-element');
+			element.classList.remove('active');
 		});
 		setTimeout(() => {
-			hijo.forEach((e) => {
-				e.classList.remove('shake-element');
+			ratingElements.forEach((element) => {
+				element.classList.remove('shake-element');
 			});
 		}, 1000);
 	}
