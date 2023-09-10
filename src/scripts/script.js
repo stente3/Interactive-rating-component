@@ -55,8 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Crea un nuevo elemento HTML <div>
 		const errorMessage = document.createElement('div');
+    errorMessage.classList.add("errorMessage")
 		// Asigna un texto específico como contenido del elemento <div>
-		errorMessage.textContent = 'Please select only one rating.';
+		errorMessage.textContent = 'Please select only one rating';
 
 		// Insertar el mensaje de error después del contenedor de calificación
 		ratingContainer.insertAdjacentElement('afterend', errorMessage);

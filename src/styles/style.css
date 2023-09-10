@@ -156,3 +156,7 @@ body {
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
+.errorMessage{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
