@@ -96,7 +96,6 @@ body {
 	background-color: var(--LightGrey);
 	color: var(--White);
 }
-
 .rating__submit-button {
 	width: 100%;
 	padding: 1rem 0;
@@ -110,7 +109,6 @@ body {
 	background-color: var(--White);
 	color: var(--Orange);
 }
-
 @media (max-width: 375px) {
 	.rating__container .button {
 		width: 4rem;
@@ -132,7 +130,6 @@ body {
 	background-color: var(--Orange);
 	color: white;
 }
-
 @keyframes shake {
 	0% {
 		transform: translateX(0);
@@ -150,13 +147,34 @@ body {
 		transform: translateX(0);
 	}
 }
-
 .shake-element {
 	animation: shake 0.3s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
-.errorMessage{
-  text-align: center;
-  margin-bottom: 1.5rem;
+.errorMessage {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+/* THANKS SECTION */
+.thanks__image {
+	margin: 0 auto 2rem auto;
+}
+.thanks__rating p {
+	color: var(--Orange);
+	border-radius: 2rem;
+	display: inline-block;
+	background-color: var(--DarkBlue);
+	padding: 0.6rem 1.2rem 0.3rem 1rem;
+	margin: 1rem auto 2rem auto;
+}
+.thanks__heading {
+	margin: 0.5rem auto 1rem auto;
+}
+.thanks__paragraph {
+	color: var(--LightGrey);
+}
+.thanks {
+	text-align: center;
 }
