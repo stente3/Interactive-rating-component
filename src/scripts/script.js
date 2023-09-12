@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Busca los elementos del DOM una vez que el DOM se ha cargado
 	const ratingContainer = document.querySelector('.rating__container');
 	const ratingSubmitButton = document.querySelector('.rating__submit-button');
+	const main = document.querySelector('.main');
 
 	// Función para alternar la clase 'active' en un elemento
 	const toggleActive = (targetElement) => {
@@ -10,16 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	// Función para calcular la cantidad de elementos con la clase 'active'
-	const calculateRating = (ratingItems) => {
+	const checkRating = (ratingItems) => {
 		let valueCount = 0;
-
 		ratingItems.forEach((item) => {
 			if (item.classList.contains('active')) {
 				valueCount++;
 			}
 		});
-
 		return valueCount;
+	};
+	// Función que permite conocer cuál de todos los elementos hijos contienen la clase "active"
+	const calculateRating = (ratingItems) => {
+		let value;
+		ratingItems.forEach((item) => {
+			if (item.classList.contains('active')) {
+				value = item.textContent;
+			}
+		});
+		return value;
 	};
 
 	// Escucha el evento de clic en el contenedor de calificación
@@ -31,10 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Escucha el evento de clic en el botón de envío de calificación
 	ratingSubmitButton.addEventListener('click', () => {
 		const ratingItems = ratingContainer.querySelectorAll('.button');
-		const valueCount = calculateRating(ratingItems);
 
-		if (valueCount === 1) {
-			console.log("You're in");
+		if (checkRating(ratingItems) === 1) {
+			ThanksElements(calculateRating(ratingItems));
 		} else {
 			resetAndAnimateRatingElements();
 		}
@@ -55,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Crea un nuevo elemento HTML <div>
 		const errorMessage = document.createElement('div');
-    errorMessage.classList.add("errorMessage")
+		errorMessage.classList.add('errorMessage');
 		// Asigna un texto específico como contenido del elemento <div>
 		errorMessage.textContent = 'Please select only one rating';
 
@@ -67,4 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
 			errorMessage.remove();
 		}, 2000);
 	}
+	// Función que permite mostrar el agradecimiento a usuario que ofreció en feedback
+	function ThanksElements(rating) {
+		main.classList.add('thanks');
+		removeChildElements(main);
+		main.innerHTML = `
+      <img
+				src="/src/assets/images/illustration-thank-you.svg"
+				alt="thanks illustration"
+				class="thanks__image" />
+			<span class="thanks__rating">
+				<p>You select ${rating} out of 5</p>
+			</span>
+			<h2 class="thanks__heading">Thank you!</h2>
+			<p class="thanks__paragraph">
+				We appreciate you taking the time to give a rating. If you ever need
+				more support, don’t hesitate to get in touch!
+			</p>
+    `;
+	}
+	// Función que permite eleminar todos los elementos hjos del contenedor pasado como parametro
+	const removeChildElements = (elementContainer) => {
+		// Verificamos si el contenedor existe
+		if (elementContainer) {
+			while (elementContainer.firstChild) {
+				elementContainer.removeChild(elementContainer.firstChild);
+			}
+		} else {
+			console.error('El contenedor especificado no existe.');
+		}
+	};
 });
