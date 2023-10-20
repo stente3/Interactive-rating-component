@@ -83,7 +83,7 @@ Distributed under the MIT License. See [`LICENSE`](https://github.com/stente3/In
 
 ## Contact
 
-Camilo Andrés Fuentes Morales - mikarinkitamo1346@gmail.com
+Camilo Andrés Fuentes Morales - mikarinkitamo1346@gmail.com <br>
 Andrea Muñoz Cano - softhamck@gmail.com
 
 Project Link: [https://project-softhamckandstente3.netlify.app/](https://project-softhamckandstente3.netlify.app/)
