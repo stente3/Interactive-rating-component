@@ -69,6 +69,10 @@ The-project/ <br>
    ```sh
    https://github.com/stente3/Interactive-rating-component.git
    ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
 
 ## Contributing
 
